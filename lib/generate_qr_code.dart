@@ -25,7 +25,7 @@ class _GenerateQRCodeState extends State<GenerateQRCode> {
               if (urlController.text.isNotEmpty)
                 QrImageView(
                   data: urlController.text,
-                  size: 200,
+                  size: 210,
                 ),
               SizedBox(
                 height: 10,
