@@ -18,7 +18,7 @@ class _ScanQRcodeState extends State<ScanQRcode> {
           '#ff6666', 'Cancel', true, ScanMode.QR);
       if (!mounted) return;
       setState(() {
-        this.qrResult = qrCode.toString();
+        qrResult = qrCode.toString();
       });
     } on PlatformException {
       qrResult = 'Fail to read QR Code';
@@ -29,23 +29,23 @@ class _ScanQRcodeState extends State<ScanQRcode> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('QR Code Scanner'),
+        title: const Text('QR Code Scanner'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Text(
-              '$qrResult',
-              style: TextStyle(color: Colors.black),
+              qrResult,
+              style: const TextStyle(color: Colors.black),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            ElevatedButton(onPressed: scanQR, child: Text('Scan Code'))
+            ElevatedButton(onPressed: scanQR, child: const Text('Scan Code'))
           ],
         ),
       ),

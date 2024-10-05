@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'QR Code Scanner and Generator',
       debugShowCheckedModeBanner: false,
       home: Homepage(),
@@ -32,8 +32,8 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('QR Code Scanner and Generator'),
-        backgroundColor: Colors.blue,
+        title: const  Text('QR Code Scanner and Generator'),
+        backgroundColor: const Color.fromARGB(255, 72, 136, 231),
       ),
       body: Center(
         child: Column(
@@ -43,21 +43,21 @@ class _HomepageState extends State<Homepage> {
                 onPressed: () {
                   setState(() {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ScanQRcode()));
+                        MaterialPageRoute(builder: (context) =>const  ScanQRcode()));
                   });
                 },
-                child: Text('Scan QR Code')),
-            SizedBox(
+                child: const Text('Scan QR Code')),
+            const SizedBox(
               height: 40,
             ),
             ElevatedButton(
                 onPressed: () {
                   setState(() {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => GenerateQRCode()));
+                        builder: (context) => const GenerateQRCode()));
                   });
                 },
-                child: Text('Generate QR Code'))
+                child: const Text('Generate QR Code'))
           ],
         ),
       ),
